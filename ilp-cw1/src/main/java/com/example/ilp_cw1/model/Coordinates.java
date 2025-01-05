@@ -47,4 +47,34 @@ public class Coordinates {
             return true;
         }
     }
+
+    // Subtract two points (as vectors)
+    public Coordinates subtract(Coordinates p) {
+        return new Coordinates(this.lng - p.x, this.lat - p.y);
+    }
+
+    // Add two points (as vectors)
+    public Coordinates add(Coordinates p) {
+        return new Coordinates(this.lng + p.x, this.lat + p.y);
+    }
+
+    // Scale a point/vector by a scalar
+    public Coordinates scale(double scalar) {
+        return new Coordinates(this.lng * scalar, this.lat * scalar);
+    }
+
+    // Dot product of two vectors
+    public double dot(Coordinates p) {
+        return this.lng * p.x + this.lat * p.y;
+    }
+
+    // Squared magnitude of a vector
+    public double magnitudeSquared() {
+        return this.lng * this.lng + this.lat * this.lat;
+    }
+
+    // Euclidean distance between two points
+    public double distance(Coordinates p1, Coordinates p2) {
+        return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+    }
 }
