@@ -1,6 +1,8 @@
-import ilp_cw1.com.example.ilp_cw1.model;
+package com.example.ilp_cw1.utils;
+import com.example.ilp_cw1.model.Coordinates;
 
-public class ClosestPointRectangle {
+
+public class ClosestPointRegion {
 
     public Coordinates closestCoordinatesOnSegment(Coordinates p1, Coordinates p2, Coordinates p) {
         Coordinates segment = p2.subtract(p1); // Vector from p1 to p2

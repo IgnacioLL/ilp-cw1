@@ -50,12 +50,12 @@ public class Coordinates {
 
     // Subtract two points (as vectors)
     public Coordinates subtract(Coordinates p) {
-        return new Coordinates(this.lng - p.x, this.lat - p.y);
+        return new Coordinates(this.lng - p.lng, this.lat - p.lat);
     }
 
     // Add two points (as vectors)
     public Coordinates add(Coordinates p) {
-        return new Coordinates(this.lng + p.x, this.lat + p.y);
+        return new Coordinates(this.lng + p.lng, this.lat + p.lat);
     }
 
     // Scale a point/vector by a scalar
@@ -65,7 +65,7 @@ public class Coordinates {
 
     // Dot product of two vectors
     public double dot(Coordinates p) {
-        return this.lng * p.x + this.lat * p.y;
+        return this.lng * p.lng + this.lat * p.lat;
     }
 
     // Squared magnitude of a vector
@@ -74,7 +74,7 @@ public class Coordinates {
     }
 
     // Euclidean distance between two points
-    public double distance(Coordinates p1, Coordinates p2) {
-        return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+    public static double distance(Coordinates p1, Coordinates p2) {
+        return Math.sqrt(Math.pow(p1.lng - p2.lng, 2) + Math.pow(p1.lat - p2.lat, 2));
     }
 }
